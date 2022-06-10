@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 import api from '../service/api'
 import Pokemon from '../core/dto/Pokemon'
+import Card from '../ui/components/Card';
 
 function App() {
   const [pokemon, setPokemon] = useState<Pokemon[]>()
@@ -27,14 +28,9 @@ function App() {
 
   return (
     <div className="App">
-      {pokemon?.map((item, index) => {
-        return (<div key={index}>
-          <p>{item.name}</p>
-          <p>{item.id}</p>
-          <p>{item.height}</p>
-          <p>{item.weight}</p>
-          <p>{item.base_experience}</p>
-        </div>
+      {pokemon?.map((item) => {
+        return (
+          <Card pokemon={item} />
         )
       })}
     </div>
