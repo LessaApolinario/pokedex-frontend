@@ -6,33 +6,41 @@ import Pokemon from './core/dto/Pokemon'
 import PokemonPromise from './core/dto/PokemonPromise';
 
 function App() {
-  const [pokemon, setPokemon] = useState<Pokemon[]>([])
+  const [pokemon, setPokemon] = useState<Pokemon[]>()
 
   useEffect(() => {
-    async function getPokemonpromises() {
-      try {
-        const response = await api.get<PokemonPromise>(`/pokemon/?limit=150`)
-        let data = response.data.results
+    try {
+      const getPokemonPromises = () => {
+        const pokemonPromisesAsArray = Array(150).fill(undefined).map(async (_, index) => {
+          const response = await api.get<Pokemon>(`/pokemon/${index + 1}?limit=150`)
+          return response.data
+        })
 
-        const pokemonPromises = Promise.all(response.data.results).then(pokemons => {
-          console.log(pokemons)
-          setPokemon(pokemons)
-        })
-        .catch(error => {
-          console.log(error)
-        })
-        
-      } catch (error) {
-        console.log(error)
+        return pokemonPromisesAsArray
       }
-    }
 
-    getPokemonpromises()
+      const pokemonPromises = Promise.all(getPokemonPromises()).then(pokemons => {
+        setPokemon(pokemons)
+      })
+
+      /*let data = response.data.results
+
+      const pokemonPromises = Promise.all(response.data.results).then(pokemons => {
+        console.log(pokemons)
+        setPokemon(pokemons)
+      })
+      .catch(error => {
+        console.log(error)
+      })*/
+
+    } catch (error) {
+      console.log(error)
+    }
   }, [])
 
   return (
     <div className="App">
-      {pokemon.map((item, index) => {
+      {pokemon?.map((item, index) => {
         return (<div key={index}>
           <p>{item.name}</p>
           <p>{item.id}</p>
