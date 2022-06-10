@@ -12,7 +12,7 @@ function Card({ pokemon }: CardProps) {
       <h2>{pokemon.name} | {pokemon.id}</h2>
       
       <p>
-        experience: {pokemon.base_experience}
+        experience: {pokemon.base_experience} type: {pokemon.types[0].type.name}
       </p>
 
       <p>
