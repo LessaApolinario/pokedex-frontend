@@ -33,9 +33,9 @@ function App() {
       <h1>Pokedex</h1>
 
       <div className={styles.pokemons}>
-        {pokemon?.map((item) => {
+        {pokemon?.map((item, index) => {
           return (
-            <Card pokemon={item} />
+            <Card pokemon={item} key={index} />
           )
         })}
       </div>
