@@ -1,10 +1,12 @@
 .container {
-	background: linear-gradient(to right, #f0f0f8, #c85048);
+	background: linear-gradient(to right, #f0f0f8, #fd9f9b);
 
   h1 {
     font-size: 6rem;
     font-weight: normal;
     text-align: center;
+
+    margin-bottom: 2rem;
   }
 
   .pokemons {
