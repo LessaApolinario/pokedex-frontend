@@ -14,11 +14,11 @@ function Card({ pokemon }: CardProps) {
       <h2>{pokemon.id}. {pokemon.name}</h2>
       
       <p>
-        experience: {pokemon.base_experience} | type: {pokemon.types[0].type.name}
+        experience: {pokemon.base_experience} <span>|</span> type: {pokemon.types[0].type.name}
       </p>
 
       <p>
-        height: {pokemon.height} | weight: {pokemon.weight}
+        height: {pokemon.height} <span>|</span> weight: {pokemon.weight}
       </p>
     </div>
   )
