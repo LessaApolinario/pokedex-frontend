@@ -7,12 +7,14 @@ interface CardProps {
 }
 
 function Card({ pokemon }: CardProps) {
+  const className = `${styles.container} ${pokemon.types[0].type.name}`
+  
   return (
-    <div className={styles.container}>
+    <div className={className}>
       <h2>{pokemon.name} | {pokemon.id}</h2>
       
       <p>
-        experience: {pokemon.base_experience} type: {pokemon.types[0].type.name}
+        experience: {pokemon.base_experience} | type: {pokemon.types[0].type.name}
       </p>
 
       <p>
