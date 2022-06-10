@@ -22,6 +22,9 @@
     margin-bottom: 0.8rem;
   }
 
+  &:hover {
+    animation: up 0.5s linear;
+  }
   &.steel {
     background-color: #f4f4f4;
   }
@@ -80,5 +83,21 @@
   
   &.normal {
     background-color: #F5F5F5;
+  }
+
+  @keyframes up {
+    20% {
+      transform: translateY(-1rem);
+    }
+    40% {
+			transform: translateY(-1rem);
+	  }
+
+	  80% {
+			transform: translateY(0);
+	  }
+	  100% {
+			transform: translateY(0);
+	  }
   }
 }
