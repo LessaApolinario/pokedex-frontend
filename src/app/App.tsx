@@ -20,7 +20,7 @@ function App() {
         return pokemonPromisesAsArray
       }
 
-      const pokemonPromises = Promise.all(getPokemonPromises()).then(pokemons => {
+      Promise.all(getPokemonPromises()).then(pokemons => {
         setPokemon(pokemons)
       })
     } catch (error) {
