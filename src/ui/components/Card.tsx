@@ -7,7 +7,7 @@ interface CardProps {
 }
 
 function Card({ pokemon }: CardProps) {
-  const className = `${styles.container} ${pokemon.types[0].type.name}`
+  const className = `${styles.container} ${styles[pokemon.types[0].type.name]}`
   
   return (
     <div className={className}>
