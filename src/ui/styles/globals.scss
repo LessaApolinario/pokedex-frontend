@@ -1,5 +1,12 @@
+@font-face {
+  font-family: "elements";
+  src: url(../../assets/fonts/Rubik-Regular.ttf);
+}
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+
+  font-family: 'elements';
 }
