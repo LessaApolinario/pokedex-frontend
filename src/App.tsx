@@ -20,17 +20,6 @@ function App() {
       const pokemonPromises = Promise.all(getPokemonPromises()).then(pokemons => {
         setPokemon(pokemons)
       })
-
-      /*let data = response.data.results
-
-      const pokemonPromises = Promise.all(response.data.results).then(pokemons => {
-        console.log(pokemons)
-        setPokemon(pokemons)
-      })
-      .catch(error => {
-        console.log(error)
-      })*/
-
     } catch (error) {
       console.log(error)
     }
