@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react';
-//import './App.css';
-import api from './service/api'
 
+import api from './service/api'
 import Pokemon from './core/dto/Pokemon'
-import PokemonPromise from './core/dto/PokemonPromise';
 
 function App() {
   const [pokemon, setPokemon] = useState<Pokemon[]>()
