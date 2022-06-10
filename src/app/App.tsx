@@ -4,6 +4,8 @@ import api from '../service/api'
 import Pokemon from '../core/dto/Pokemon'
 import Card from '../ui/components/Card';
 
+import styles from "./App.module.scss"
+
 function App() {
   const [pokemon, setPokemon] = useState<Pokemon[]>()
 
@@ -27,12 +29,16 @@ function App() {
   }, [])
 
   return (
-    <div className="App">
-      {pokemon?.map((item) => {
-        return (
-          <Card pokemon={item} />
-        )
-      })}
+    <div className={styles.container}>
+      <h1>Pokedex</h1>
+
+      <div className={styles.pokemons}>
+        {pokemon?.map((item) => {
+          return (
+            <Card pokemon={item} />
+          )
+        })}
+      </div>
     </div>
   );
 }
