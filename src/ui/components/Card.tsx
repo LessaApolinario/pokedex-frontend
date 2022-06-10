@@ -11,7 +11,7 @@ function Card({ pokemon }: CardProps) {
   
   return (
     <div className={className}>
-      <h2>{pokemon.name} | {pokemon.id}</h2>
+      <h2>{pokemon.id}. {pokemon.name}</h2>
       
       <p>
         experience: {pokemon.base_experience} | type: {pokemon.types[0].type.name}
